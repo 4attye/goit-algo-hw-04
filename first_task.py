@@ -1,26 +1,32 @@
-
-def total_salary(salary_file):
+def total_salary(path):
     try:
-        with open(salary_file, "r") as file:
-            lines = file.readline()
-
+        # Відкриваємо файл для читання й читаємо рядки
+        with open(path, "r") as file:
+            lines = file.readlines()
+        # Створюємо змінні для загальної зарплати та кількості рядків
         total_salarys = 0
         count = 0
-
+        # Перебіраємо кожен рядок у списку lines
         for line in lines:
-            name, salary = line.strip().split(',')
-            total_salarys += int(salary)
-            count += 1
+            name, salary = line.split(',')  # Розділяємо рядок на ім'я та зарплату
+            total_salarys += int(salary)    # Додаємо зарплату до загальної зарплати
+            count += 1                      # Збільшуємо кількість рядків на 1
 
-        average_salary = total_salarys / count if count > 0 else 0
+        average_salary = total_salarys / count   # Рахуємо середню заробітню плату
+        return total_salarys, int(average_salary)  # Повертаємо загальну та середню зарплати
 
-        return total_salarys, average_salary
-
+    # Обробляємо помилку "Файл не знайдено"
     except FileNotFoundError:
-        print("Файл не знайдено.")
-        return None, None
+        print("Файл не знайдено")
+        return 0, 0
+
+    # Обробляємо помилку "Помилка обробки даних"
+    except Exception:
+        print("Помилка обробки даних")
+        return 0, 0
 
 
-path_to_file = "salary_file.txt"
-total, average = total_salary(path_to_file)
+# Отримуємо загальну суму та середню зарплату з файлу зарплат
+total, average = total_salary("path/to/salary_file.txt")
+# Виводимо результат обчислення загальної та середньої зарплати
 print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
