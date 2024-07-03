@@ -1,7 +1,7 @@
 def total_salary(path):
     try:
         # Відкриваємо файл для читання й читаємо рядки
-        with open(path, "r") as file:
+        with open(path, "r", encoding='utf-8') as file:
             lines = file.readlines()
         # Створюємо змінні для загальної зарплати та кількості рядків
         total_salarys = 0
