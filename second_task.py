@@ -1,28 +1,27 @@
 def get_cats_info(path):
     try:
+        # Відкриваємо файл для читання й читаємо рядки
         with open(path, "r", encoding='utf-8') as file:
             lines = file.readlines()
-        list_of_dictionaries = []
+
+        list_of_dictionaries = []  # Створюємо список словників
+        # Перебіраємо кожен рядок у списку lines
         for line in lines:
+            # Розділяємо рядок на id та name та age
             cat_id, cat_name, cat_age = line.strip().split(",")
+            # Додаємо отримані значення до словника
             dictionery = {
                 "name": cat_name,
                 "id": cat_id,
                 "age": cat_age}
-            list_of_dictionaries.append(dictionery)
+            list_of_dictionaries.append(dictionery)  # Додаємо словник до списку
+        return list_of_dictionaries  # Повертаємо список з функції
 
-        return list_of_dictionaries
-
-
-    except FileNotFoundError:
+    except FileNotFoundError:  # Обробляємо помилку якщо файл незнайдено
         return "Файл не знайдено"
 
-    except ValueError:
+    except ValueError:  # Обробляємо помилку якщо файл пошкоджено
         return "Файл пошкоджено"
-
-
-
-
 
 
 cats_info = get_cats_info("path/to/cats_file.txt")
