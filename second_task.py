@@ -15,7 +15,7 @@ def get_cats_info(path):
                 "name": cat_name,
                 "age": cat_age}
             list_of_dictionaries.append(dictionery)  # Додаємо словник до списку
-        return list_of_dictionaries  # Повертаємо список з функції
+        return list_of_dictionaries  # Повертаємо оброблений список
 
     except FileNotFoundError:  # Обробляємо помилку якщо файл незнайдено
         return "Файл не знайдено"
