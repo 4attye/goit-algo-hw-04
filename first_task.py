@@ -9,24 +9,28 @@ def total_salary(path):
         # Перебіраємо кожен рядок у списку lines
         for line in lines:
             name, salary = line.split(',')  # Розділяємо рядок на ім'я та зарплату
-            total_salarys += int(salary)    # Додаємо зарплату до загальної зарплати
-            count += 1                      # Збільшуємо кількість рядків на 1
+            total_salarys += int(salary)  # Додаємо зарплату до загальної зарплати
+            count += 1  # Збільшуємо кількість рядків на 1
 
-        average_salary = total_salarys / count   # Рахуємо середню заробітню плату
+        average_salary = total_salarys / count  # Рахуємо середню заробітню плату
         return total_salarys, int(average_salary)  # Повертаємо загальну та середню зарплати
 
     # Обробляємо помилку "Файл не знайдено"
     except FileNotFoundError:
-        print("Файл не знайдено")
-        return 0, 0
+        return "Файл не знайдено"
+
 
     # Обробляємо помилку "Помилка обробки даних"
     except Exception:
-        print("Помилка обробки даних")
-        return 0, 0
+        return "Помилка обробки даних"
 
 
-# Отримуємо загальну суму та середню зарплату з файлу зарплат
-total, average = total_salary("path/to/salary_file.txt")
-# Виводимо результат обчислення загальної та середньої зарплати
-print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
+try:
+    # Отримуємо загальну суму та середню зарплату з файлу зарплат
+    total, average = total_salary("path/to/salary_file.txt")
+    # Виводимо результат обчислення загальної та середньої зарплати
+    print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
+
+except Exception:
+    # Якщо виникає помилка повернення даних, викликаємо функцію total_salary ще раз й виводим яка саме сталась помилка
+    print(total_salary("path/to/salary_file.txt"))

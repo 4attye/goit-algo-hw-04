@@ -11,8 +11,8 @@ def get_cats_info(path):
             cat_id, cat_name, cat_age = line.strip().split(",")
             # Додаємо отримані значення до словника
             dictionery = {
-                "name": cat_name,
                 "id": cat_id,
+                "name": cat_name,
                 "age": cat_age}
             list_of_dictionaries.append(dictionery)  # Додаємо словник до списку
         return list_of_dictionaries  # Повертаємо список з функції
