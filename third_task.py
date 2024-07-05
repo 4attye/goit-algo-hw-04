@@ -25,6 +25,5 @@ def main(received_directory):
 
 
 if __name__ == "__main__":
-
     directory = sys.argv[1]
     main(directory)
