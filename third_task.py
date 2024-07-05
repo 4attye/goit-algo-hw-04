@@ -2,8 +2,7 @@ import sys
 from pathlib import Path
 from colorama import init, Fore, Style
 
-# Ініціалізуємо colorama
-init(autoreset=True)
+
 
 def print_directory_contents(path, indent=0):
     try:
@@ -16,6 +15,7 @@ def print_directory_contents(path, indent=0):
     except PermissionError:
         print(f"{' ' * indent}{Fore.RED}Permission denied: {item.name}{Style.RESET_ALL}")
 
+
 def main(directory):
     path = Path(directory)
     if not path.exists() or not path.is_dir():
@@ -25,6 +25,7 @@ def main(directory):
     print(f"{Fore.YELLOW}Directory structure of {path}:{Style.RESET_ALL}")
     print_directory_contents(path)
 
+
 if __name__ == "__main__":
 
     try:
@@ -33,4 +34,3 @@ if __name__ == "__main__":
     except Exception:
         print(f"{Fore.RED}Usage: python {sys.argv[0]} <directory_path>{Style.RESET_ALL}")
         sys.exit(1)
-
