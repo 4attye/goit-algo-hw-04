@@ -1,6 +1,6 @@
 def get_cats_info(path):
     try:
-        filtered_list = ""
+        # filtered_list = ""
         # Відкриваємо файл для читання й читаємо рядки
         with open(path, "r", encoding='utf-8') as file:
             lines = file.readlines()
