@@ -8,7 +8,7 @@ def total_salary(path):
         count = 0
         # Перебіраємо кожен рядок у списку lines
         for line in lines:
-            name, salary = line.split(',')  # Розділяємо рядок на ім'я та зарплату
+            name, salary = line.strip().split(',')  # Розділяємо рядок на ім'я та зарплату
             total_salarys += int(salary)  # Додаємо зарплату до загальної зарплати
             count += 1  # Збільшуємо кількість рядків на 1
 
@@ -17,12 +17,12 @@ def total_salary(path):
 
     # Обробляємо помилку "Файл не знайдено"
     except FileNotFoundError:
-        return "Файл не знайдено"
+        return "File not found"
 
 
     # Обробляємо помилку "Помилка обробки даних"
     except Exception:
-        return "Помилка обробки даних"
+        return "Data processing error"
 
 
 try:

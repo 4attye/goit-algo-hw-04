@@ -1,5 +1,6 @@
 def get_cats_info(path):
     try:
+        filtered_list = ""
         # Відкриваємо файл для читання й читаємо рядки
         with open(path, "r", encoding='utf-8') as file:
             lines = file.readlines()
@@ -14,8 +15,14 @@ def get_cats_info(path):
                 "id": cat_id,
                 "name": cat_name,
                 "age": cat_age}
-            list_of_dictionaries.append(dictionery)  # Додаємо словник до списку
+            # Додаємо словник до списку
+            list_of_dictionaries.append(dictionery)
+
         return list_of_dictionaries  # Повертаємо оброблений список
+        # Або. Переносимо кожен словник в новий рядок
+        # for dictionary_from_list in list_of_dictionaries:
+        #      filtered_list += f"{dictionary_from_list}\n"
+        # return filtered_list
 
     except FileNotFoundError:  # Обробляємо помилку якщо файл незнайдено
         return "Файл не знайдено"
