@@ -9,7 +9,7 @@ def print_directory_contents(path, indent=0):
         for item in path.iterdir():
             if item.is_dir():
                 print(f"{' ' * indent}{Fore.BLUE}{item.name}{Style.RESET_ALL}")
-                print_directory_contents(item, indent + 2)
+                # print_directory_contents(item, indent + 2)
             else:
                 print(f"{' ' * indent}{Fore.GREEN}{item.name}{Style.RESET_ALL}")
     except PermissionError:
