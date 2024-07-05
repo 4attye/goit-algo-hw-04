@@ -16,7 +16,6 @@ def print_directory_contents(path, indent=0):
         print(f"{" " * indent}{Fore.RED}Permission denied: {item.name}{Style.RESET_ALL}")
 
 
-
 def main(received_directory):
     path = Path(received_directory)
     if not path.exists() or not path.is_dir():
