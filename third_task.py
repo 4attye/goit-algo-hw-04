@@ -22,8 +22,8 @@ def main(received_directory):
         print(f"{Fore.RED}Error: The provided path is not a valid directory.{Style.RESET_ALL}")
         return
 
-    print(f"{Fore.YELLOW}Directory structure of {path}:{Style.RESET_ALL}")
-    print_directory_contents(path)
+    else:
+        print_directory_contents(path)
 
 
 if __name__ == "__main__":
