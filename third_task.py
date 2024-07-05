@@ -4,15 +4,15 @@ from colorama import Fore, Style
 
 
 
-def print_directory_contents(path, indent=0):
+def print_directory_contents(path):
     try:
         for item in path.iterdir():
             if item.is_dir():
-                print(f"{' ' * indent}{Fore.BLUE}{item.name}{Style.RESET_ALL}")
+                print(f"{Fore.BLUE}{item.name}{Style.RESET_ALL}")
             else:
-                print(f"{' ' * indent}{Fore.GREEN}{item.name}{Style.RESET_ALL}")
+                print(f"{Fore.GREEN}{item.name}{Style.RESET_ALL}")
     except PermissionError:
-        print(f"{' ' * indent}{Fore.RED}Permission denied: {item.name}{Style.RESET_ALL}")
+        print(f"{Fore.RED}Permission denied: {item.name}{Style.RESET_ALL}")
 
 
 def main(received_directory):
