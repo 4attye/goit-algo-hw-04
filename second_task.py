@@ -25,10 +25,10 @@ def get_cats_info(path):
         # return filtered_list
 
     except FileNotFoundError:  # Обробляємо помилку якщо файл незнайдено
-        return "Файл не знайдено"
+        return "File not found"
 
     except ValueError:  # Обробляємо помилку якщо файл пошкоджено
-        return "Файл пошкоджено"
+        return "Data processing error"
 
 
 cats_info = get_cats_info("path/to/cats_file.txt")

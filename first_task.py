@@ -21,7 +21,7 @@ def total_salary(path):
 
 
     # Обробляємо помилку "Помилка обробки даних"
-    except Exception:
+    except ValueError:
         return "Data processing error"
 
 
