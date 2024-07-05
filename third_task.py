@@ -1,6 +1,6 @@
 import sys
 from pathlib import Path
-from colorama import init, Fore, Style
+from colorama import Fore, Style
 
 
 
@@ -16,8 +16,8 @@ def print_directory_contents(path, indent=0):
         print(f"{' ' * indent}{Fore.RED}Permission denied: {item.name}{Style.RESET_ALL}")
 
 
-def main(directory):
-    path = Path(directory)
+def main(received_directory):
+    path = Path(received_directory)
     if not path.exists() or not path.is_dir():
         print(f"{Fore.RED}Error: The provided path is not a valid directory.{Style.RESET_ALL}")
         return
