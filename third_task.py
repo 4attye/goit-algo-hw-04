@@ -21,7 +21,6 @@ def main(received_directory):
     if not path.exists() or not path.is_dir():
         print(f"{Fore.RED}Error: The provided path is not a valid directory.{Style.RESET_ALL}")
         return
-
     else:
         print_directory_contents(path)
 
