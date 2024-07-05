@@ -64,7 +64,7 @@ def main():
     contacts = {}
     print("Welcome to the assistant bot!")
     while True:
-        # Отримує від данні користувача
+        # Отримує данні від користувача
         user_input = input("Enter a command: ")
         # Парсить введення користувача на команду та аргументи
         command, args = parse_input(user_input)
