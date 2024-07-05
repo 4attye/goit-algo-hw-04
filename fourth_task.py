@@ -18,7 +18,7 @@ def add_contact(args, contacts):
             contacts[name] = phone
             return "Contact added."
         else:
-            return "Contact exists"
+            return "Such a contact already exists."
 
 
 # Створюємо функцію "change_contact" де перевіряємо,
@@ -94,5 +94,5 @@ def main():
 
 
 if __name__ == "__main__":
-    # Запускає головну функцію
+    # Запускаємо головну функцію
     main()
